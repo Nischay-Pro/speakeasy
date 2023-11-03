@@ -80,8 +80,8 @@ def clean_input_event(event):
     return key_value_pairs
     
 def send_twilio_message(message,dynamo_fields):
-    account_sid = 'AC76958430ae39d85cd3079fb7272a78a4'  # os.environ['TWILIO_ACCOUNT_SID']
-    auth_token  = '0671387db3c0cbe7d76d0b712c1a69c5'    # os.environ['TWILIO_AUTH_TOKEN']
+    account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    auth_token  = os.environ['TWILIO_AUTH_TOKEN']
     client = Client(account_sid, auth_token)
     
     response = client.messages.create(
